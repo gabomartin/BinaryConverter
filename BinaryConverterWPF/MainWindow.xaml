@@ -1,0 +1,17 @@
+﻿<Window x:Class="BinaryConverterWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BinaryConverterWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="ToBinarioText" HorizontalAlignment="Left" Height="40" Margin="80,64,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" TextChanged="ToBinarioText_TextChanged"/>
+        <Button x:Name="ToBinarioButton" Cursor="Hand"  Content="Convertir..." HorizontalAlignment="Left" Height="40" Margin="255,64,0,0" VerticalAlignment="Top" Width="65" Click="ToBinarioButton_Click"/>
+        <TextBox x:Name="ToDecimalText" HorizontalAlignment="Left" Margin="80,144,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Height="40" TextChanged="ToDecimalText_TextChanged"/>
+        <Button x:Name="ToDecimalButton" Cursor="Hand" Content="Convertir..." HorizontalAlignment="Left" Margin="255,144,0,0" VerticalAlignment="Top" Height="40" Width="65" Click="ToDecimalButton_Click"/>
+        <TextBlock x:Name="D2BResult" HorizontalAlignment="Left" Height="40" Margin="400,64,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+        <TextBlock x:Name="B2DResult" HorizontalAlignment="Left" Height="40" Margin="400,144,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+    </Grid>
+</Window>
