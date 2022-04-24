@@ -8,7 +8,7 @@ namespace BinaryConverterConsole
 
         static void Main(string[] args)
         {
-            Menu();
+            while(Menu());
             Separator();
             Console.WriteLine("Gracias por usar el conversor binario/decimal. Adios!");
             Separator();
@@ -17,7 +17,7 @@ namespace BinaryConverterConsole
 
         }
 
-        static void Menu()
+        static bool Menu()
         {
             Console.Clear();
             Separator();
@@ -42,36 +42,34 @@ namespace BinaryConverterConsole
                 {
                     Console.WriteLine();
                     Console.WriteLine("Ingrese un numero valido.");
+                    return true;
 
                 }
                 catch (Exception)
                 {
                     Console.WriteLine();
                     Console.WriteLine("Se ha producido un error desconocido, por favor vuelva a intentarlo.");
-
+                    return true;
                 }
                 switch (menuOption)
                 {
                     case 0:
-                        return;
-      
+                        return false;
                     case 1:
                         ConvertToBinary();
-                        Menu();
                         break;
                     case 2:
                         ConvertToDecimal();
-                        Menu();
                         break;
                     default:
-                        Menu();
                         break;
 
                 }
+                return true;
             }
 
-            
-            
+            return true;
+
         }
         static void ConvertToBinary()
         {
