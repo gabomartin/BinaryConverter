@@ -5,13 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BinaryConverterWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <TextBox x:Name="ToBinarioText" HorizontalAlignment="Left" Height="40" Margin="80,64,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" TextChanged="ToBinarioText_TextChanged"/>
-        <Button x:Name="ToBinarioButton" Cursor="Hand"  Content="Convertir..." HorizontalAlignment="Left" Height="40" Margin="255,64,0,0" VerticalAlignment="Top" Width="65" Click="ToBinarioButton_Click"/>
-        <TextBox x:Name="ToDecimalText" HorizontalAlignment="Left" Margin="80,144,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Height="40" TextChanged="ToDecimalText_TextChanged"/>
-        <Button x:Name="ToDecimalButton" Cursor="Hand" Content="Convertir..." HorizontalAlignment="Left" Margin="255,144,0,0" VerticalAlignment="Top" Height="40" Width="65" Click="ToDecimalButton_Click"/>
-        <TextBlock x:Name="D2BResult" HorizontalAlignment="Left" Height="40" Margin="400,64,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
-        <TextBlock x:Name="B2DResult" HorizontalAlignment="Left" Height="40" Margin="400,144,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
-    </Grid>
+        Title="Conversor" Height="450" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True">
+
+    <Border Background="#FF79C8BF" CornerRadius="10">
+        <Grid>
+            <Border CornerRadius="5" BorderThickness="1" BorderBrush="Black" Height="40" Margin="80,64,560,346">
+                <TextBox x:Name="ToBinarioText" MaxLength="19" Padding="10"  Background="Transparent" HorizontalAlignment="Center" Height="40" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="160" TextChanged="ToBinarioText_TextChanged"/>
+            </Border>
+            <Button x:Name="ToBinarioButton" Background="DarkGray" Cursor="Hand"  Content="Convertir..." HorizontalAlignment="Left" Height="40" Margin="255,64,0,0" VerticalAlignment="Top" Width="65" Click="ToBinarioButton_Click"/>
+            <Border CornerRadius="5" BorderThickness="1" BorderBrush="Black" Height="40" Margin="80,144,560,266">
+                <TextBox x:Name="ToDecimalText" MaxLength="19" Padding="10" Background="Transparent" HorizontalAlignment="Center" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="160" Height="40" TextChanged="ToDecimalText_TextChanged"/>
+            </Border>
+            <Button x:Name="ToDecimalButton" Background="DarkGray" Cursor="Hand" Content="Convertir..." HorizontalAlignment="Left" Margin="255,144,0,0" VerticalAlignment="Top" Height="40" Width="65" Click="ToDecimalButton_Click"/>
+            <TextBox x:Name="D2BResult" BorderThickness="0" Text="{Binding Text, Mode=OneWay}" IsReadOnly="True" Padding="10" Background="Transparent" HorizontalAlignment="Left" Height="40" Margin="400,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240"/>
+            <TextBox x:Name="B2DResult" BorderThickness="0" Text="{Binding Text, Mode=OneWay}" IsReadOnly="True" Padding="10" Background="Transparent" HorizontalAlignment="Left" Height="40" Margin="400,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240"/>
+            <Label Content="Decimal a binario" HorizontalAlignment="Left" Height="25" Margin="75,34,0,0" VerticalAlignment="Top" Width="160"/>
+            <Label Content="Binario a decimal" HorizontalAlignment="Left" Height="25" Margin="75,114,0,0" VerticalAlignment="Top" Width="160"/>
+            <Border CornerRadius="5" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="40" Margin="400,144,0,0" VerticalAlignment="Top" Width="240"/>
+            <Border CornerRadius="5" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="40" Margin="400,64,0,0" VerticalAlignment="Top" Width="240"/>
+            <Label Visibility="Visible" x:Name="ResB" Content="Resultado:" HorizontalAlignment="Left" Height="30" Margin="335,69,0,0" VerticalAlignment="Top" Width="65"/>
+            <Button Background="Red" Name="CloseButton" Content="" Click="CloseButton_Click"  Margin="780,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="10" Height="10" />
+            <Button Background="Yellow" x:Name="MinimizeButton" Content="" Click="MinimizeButton_Click"  Margin="760,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="10" Height="10" />
+            <Button x:Name="ClearD2B" Background="DarkGray" Cursor="Hand" Content="Limpiar" HorizontalAlignment="Left" Height="40" Margin="660,64,0,0" VerticalAlignment="Top" Width="60" Click="ClearD2B_Click"/>
+            <Button x:Name="ClearB2D" Background="DarkGray" Cursor="Hand" Content="Limpiar" HorizontalAlignment="Left" Height="40" Margin="660,144,0,0" VerticalAlignment="Top" Width="60" Click="ClearB2D_Click"/>
+            <Label Visibility="Hidden" x:Name="ResD" Content="Resultado:" HorizontalAlignment="Left" Height="30" Margin="335,149,0,0" VerticalAlignment="Top" Width="65"/>
+        </Grid>
+    </Border>
 </Window>
